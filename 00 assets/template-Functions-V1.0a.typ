@@ -3,6 +3,7 @@
 // --- Imports:
 #import "@preview/taskize:0.2.5": tasks
 #import "@preview/simple-plot:0.9.1": data, plot
+#import "@preview/lilaq:0.6.0" as lq
 
 // --- Custom Befehle:
 
@@ -432,5 +433,28 @@
         ..sink,
       )
     ]
+  ]
+}
+
+// Säulendiagramm
+#let barChart(x-labels, y-values) = {
+  show: lq.show_(
+    lq.tick-label.with(kind: "x"),
+    it => box(
+      width: 0pt,
+      align(right, rotate(-45deg, reflow: true, it))
+    ),
+  )
+  align(center)[
+    #lq.diagram(
+    xaxis: (
+      ticks: x-labels.enumerate(),
+      subticks: none,
+    ),
+    lq.bar(
+      range(y-values.len()),
+      y-values
+    )
+  )
   ]
 }

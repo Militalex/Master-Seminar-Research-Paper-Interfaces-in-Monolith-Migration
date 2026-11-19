@@ -437,7 +437,7 @@
 }
 
 // Säulendiagramm
-#let barChart(x-labels, y-values) = {
+#let barChart(x-labels, y-values, showNumbers: false) = {
   show: lq.show_(
     lq.tick-label.with(kind: "x"),
     it => box(
@@ -445,16 +445,30 @@
       align(right, rotate(-45deg, reflow: true, it))
     ),
   )
+
+  let y-sorted = y-values.sorted()
+  let yMin = if y-sorted.first() < 0 {y-sorted.first()} else {0}
+  let yMax = y-sorted.last() + 4
+
   align(center)[
     #lq.diagram(
-    xaxis: (
-      ticks: x-labels.enumerate(),
-      subticks: none,
-    ),
-    lq.bar(
-      range(y-values.len()),
-      y-values
+      xaxis: (
+        ticks: x-labels.enumerate(),
+        subticks: none,
+      ),
+      yaxis: (
+        lim: (yMin, yMax),
+      ),
+      lq.bar(
+        range(y-values.len()),
+        y-values
+      ),
+      // Werte oberhalb jeder Säule (nur bei showNumbers)
+      ..if showNumbers {
+        range(y-values.len()).zip(y-values).map(((x, y)) =>
+          lq.place(x, y, align: bottom, pad(0.2em)[*#y*])
+        )
+      }
     )
-  )
   ]
 }

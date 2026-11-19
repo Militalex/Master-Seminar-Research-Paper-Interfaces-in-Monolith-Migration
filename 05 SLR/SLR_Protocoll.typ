@@ -301,7 +301,23 @@ The Search String for Springer had to be adapted, as no abstract search was poss
 - 170 results _(07.11.2026)_
   - 1 book
 
-== Results by used Searching Platform:
+== Inclusion and Exclusion Criteria
+A selected primary study must pass all Inclusion Criteria and does not fail any Exclusion Criteria.
+
+=== Inclusion:
+- #mark(green)[(IC1)] The study investigates the migration, decomposition, or modernization of a monolithic application into microservices.
+- #mark(green)[(IC2)] The study addresses the identification, definition, design, derivation, or evaluation of microservice interfaces.
+- #mark(green)[(IC3)] The study provides sufficient information to answer at least one research question.
+
+=== Exclusion:
+- #mark(red)[(EC1)] The record is not a scientific contribution. Peer review is not required and grey literature is eligible.
+- #mark(red)[(EC2)] The record is a whole book, but single book chapters are allowed.
+- #mark(red)[(EC3)] The study does not concern migration from monoliths to microservices.
+- #mark(red)[(EC4)] The study does not mention interfaces or it only mentions them as technology (e.g. REST or API-Gateway) but don't address their identification, definition, design or evaluation.
+- #mark(red)[(EC5)]: The full text is unavailable or does not provide enough information to assess eligibility.
+
+= Screening Results
+== Refinement 1:  Packe alle Resultate zusammen und filter unvollständige Quellen und Duplikate heraus
 
 #figure(
   //placement: bottom,
@@ -310,30 +326,23 @@ The Search String for Springer had to be adapted, as no abstract search was poss
     columns: (2.5cm, 1.2fr, 1.2fr, 1.2fr, auto),
     align: center + horizon,
     [*Search Platform*], [*Results: Abstract Search*],[*Results: Full-Text Search*], [*Duplicates within platform*],[*Final*],
-    [#mark(blue)[#link("https://dl.acm.org/")[ACM - Digital Library]]],[83],[95],[34],[144],
+    [#mark(blue)[#link("https://dl.acm.org/")[ACM - Digital Library]]],[83$""^*$],[95],[34],[144],
     [#mark(blue)[#link("https://ieeexplore.ieee.org/")[IEEE - Xplore]]],[97],[164],[97],[164],
+    [*Nach 11.11.2026 neue Matches*],[-],[-],[-],[-],
     [*All*],[180],[259],[131],[308],
     [*Duplicates Between platforms*],[/],[/],[/],[6],
-    [*Results entering Screening*],[/],[/],[/],[302]
+    [*Results entering Refinement 2*],[/],[/],[/],[302]
   ),
   caption: [Search results are from 11.11.2026]
 )
+\*Contains also results from other Sources Like Springer, ScienceDirect shown in the following Chart:
 
-== Inclusion and Exclusion Criteria
-A selected primary study must pass all Inclusion Criteria and does not fail any Exclusion Criteria.
 
-=== Inclusion:
-- #mark(green)[(IC1)] The study investigates the migration, decomposition, or modernization of a monolithic application into microservices.
-- #mark(green)[(IC2)] The study addresses the identification, definition, design, derivation, or evaluation of interfaces between the resulting microservices after their identification.
-- #mark(green)[(IC3)] The study provides sufficient information to answer at least one research question.
 
-=== Exclusion:
-- #mark(red)[(EC1)] The record is not a scientific contribution. Peer review is not required and grey literature is eligible.
-- #mark(red)[(EC2)] The record is a whole book, but single book chapters are allowed.
-- #mark(red)[(EC3)] The study does not concern migration from a monolith application to microservices.
-- #mark(red)[(EC4)] The study only mentions interfaces as technology (e.g. REST or API-Gateway) but don't address their identification, definition, design or evaluation.
-- #mark(red)[(EC5)]: The full text is unavailable or does not provide enough information to assess eligibility.
+#figure(
+  barChart(([ACM], [ScienceDirect], [Springer], [IEEE], [ScitePress], [Other]), (30, 19, 16, 10, 1, 7)),
+  caption: [Beispiel für ein Säulendiagramm],
+)
 
-= Screening Results
-== Refinement 2: Checking Title against IC/EC
+== Refinement 2: Checking Title and Keywords against IC/EC
 

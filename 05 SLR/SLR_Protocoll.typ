@@ -337,11 +337,9 @@ A selected primary study must pass all Inclusion Criteria and does not fail any 
 )
 \*Contains also results from other Sources Like Springer, ScienceDirect shown in the following Chart:
 
-
-
 #figure(
-  barChart(([ACM], [ScienceDirect], [Springer], [IEEE], [ScitePress], [Other]), (30, 19, 16, 10, 1, 7)),
-  caption: [Beispiel für ein Säulendiagramm],
+  barChart(showNumbers: true, ([ACM], [ScienceDirect], [Springer], [IEEE], [ScitePress], [Other]), (30, 19, 16, 10, 1, 7)),
+  caption: [The ACM Abstract-Search uses the _ACM Guide to Computing Literature_ which also includes records from other sources shown in this bar chart.],
 )
 
 == Refinement 2: Checking Title and Keywords against IC/EC

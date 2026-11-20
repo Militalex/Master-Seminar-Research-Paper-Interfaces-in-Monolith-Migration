@@ -506,8 +506,25 @@ def build_metadata_blocks(ieee_citation: str, tags: ParsedTags) -> str:
     # --- End of generic hierarchy ---
 
     # Normal (non‑#) tags go into a final "Tags" block
+    def _is_rating_tag(tag: str) -> bool:
+        """Detect tags that represent a rating to exclude them from the generic Tags block.
+        This covers plain rating tags (e.g., "Rating: 4"), rating symbols (⭐, ★),
+        and numeric rating patterns.
+        """
+        lowered = tag.lower()
+        if "rating" in lowered:
+            return True
+        if any(sym in tag for sym in ["⭐", "★"]):
+            return True
+        # match patterns like "rate: 3" or "rating/5"
+        if re.search(r"(?:rate|rating)[:/]\s*\d+", lowered):
+            return True
+        return False
+
     if tags.normal_tags:
-        add_block("Tags", ", ".join(tags.normal_tags))
+        filtered_tags = [t for t in tags.normal_tags if not _is_rating_tag(t)]
+        if filtered_tags:
+            add_block("Tags", ", ".join(filtered_tags))
 
     # Preserve additional classic blocks that are still relevant
     add_block("Reading Progress", ", ".join(tags.reading_progress))

@@ -314,7 +314,7 @@ A selected primary study must pass all Inclusion Criteria and does not fail any 
 - #mark(red)[(EC2)] The record is a whole book, but single book chapters are allowed.
 - #mark(red)[(EC3)] The study does not concern migration from monoliths to microservices.
 - #mark(red)[(EC4)] The study does not mention interfaces or it only mentions them as technology (e.g. REST or API-Gateway) but don't address their identification, definition, design or evaluation.
-- #mark(red)[(EC5)]: The full text is unavailable or does not provide enough information to assess eligibility.
+- #mark(red)[(EC5)] The full text is unavailable or does not provide enough information to assess eligibility.
 
 = Screening Results
 == Refinement 1:  Packe alle Resultate zusammen und filter unvollständige Quellen und Duplikate heraus
@@ -343,4 +343,9 @@ A selected primary study must pass all Inclusion Criteria and does not fail any 
 )
 
 == Refinement 2: Checking Title and Keywords against IC/EC
+
+#figure(
+  barChart(showNumbers: true, ([#mark(green)[(IC1)]], [#mark(green)[(IC2)]], [#mark(green)[(IC3)]], [#mark(red)[(EC1)]], [#mark(red)[(EC2)]], [#mark(red)[(EC3)]], [#mark(red)[(EC4)]], [#mark(red)[(EC5)]], [#mark(yellow)[No decision]]), (32,4,0,0,4,39,0,0,6)),
+  caption: [Bar-Chart of the Title and Keyword Screening of the ACM/Abstract-Search Sub-Collection. Through this one can roughly decide whether the paper lies in the migration context #mark(green)[(IC1)] or not #mark(red)[(EC3)]. They were 4 Books identified #mark(red)[(EC2)].]
+)
 

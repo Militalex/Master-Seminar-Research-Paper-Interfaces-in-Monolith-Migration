@@ -5,9 +5,19 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*R2-Title-Screening*]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*Exclude*: EC3]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* .NET 8, Anomaly detection, Artificial Intelligence, Artificial intelligence, Energy Efficiency, Energy consumption, Forecasting, Internet of Things, IoT, MQTT, Machine Learning, Microservices, Modeling, Real-Time Anomaly Detection, Real-time systems, Smart Home Automation, Smart homes, Timing, Training]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Tags:* .NET 8, Anomaly detection, Artificial Intelligence, Artificial intelligence, Energy Efficiency, Energy consumption, Forecasting, Internet of Things, IoT, MQTT, Machine Learning, Microservices, Modeling, Real-Time Anomaly Detection, Real-time systems, Smart Home Automation, Smart homes, Timing, Training]
 ]

@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Codes, Gate graph neural network, Graph neural networks, Logic gates, Louvain algorithm, Manuals, Microservice architecture, Microservice architectures, Microservice extraction, Monolithic applications, Optimization, Reconstruction algorithms, Reliability, Scalability, Semantics]
+  #text(size: 0.9em)[*Tags:* Codes, Gate graph neural network, Graph neural networks, Logic gates, Louvain algorithm, Manuals, Microservice architecture, Microservice architectures, Microservice extraction, Monolithic applications, Optimization, Reconstruction algorithms, Reliability, Scalability, Semantics]
 ]

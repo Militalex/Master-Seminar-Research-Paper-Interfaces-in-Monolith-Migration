@@ -7,15 +7,19 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Paper Information:* Key Paper]
-]
-
-#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
   #text(size: 0.9em)[*Rating:* ⭐⭐⭐⭐]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Approaches, Clustering, Graph-based]
+  #text(size: 0.9em)[*Approaches*: Clustering, Graph-based]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Paper*: Key Paper]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Read*: Second Pass]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[

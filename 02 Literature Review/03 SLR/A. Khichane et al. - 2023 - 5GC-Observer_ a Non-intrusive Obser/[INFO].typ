@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* 5G, 5G mobile communication, CNF, Cloud native, Degradation, Kubernetes, Logging, Monitoring, Non-intrusive, Observability, Quality of service, Stakeholders, Statistical analysis, Telecommunication traffic, Telemetry, eBPF]
+  #text(size: 0.9em)[*Tags:* 5G, 5G mobile communication, CNF, Cloud native, Degradation, Kubernetes, Logging, Monitoring, Non-intrusive, Observability, Quality of service, Stakeholders, Statistical analysis, Telecommunication traffic, Telemetry, eBPF]
 ]

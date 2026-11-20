@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Cloud computing, Computer architecture, Market research, Microservice architectures, Monitoring, Observability, Organizations, Resilience, Scalability, Serverless computing, cloud-native applications, containerization, continuous delivery, continuous integration, kubernetes]
+  #text(size: 0.9em)[*Tags:* Cloud computing, Computer architecture, Market research, Microservice architectures, Monitoring, Observability, Organizations, Resilience, Scalability, Serverless computing, cloud-native applications, containerization, continuous delivery, continuous integration, kubernetes]
 ]

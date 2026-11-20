@@ -5,9 +5,9 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Paper Information:* Systematic Mapping Study (SMS)]
+  #text(size: 0.9em)[*Rating:* ⭐⭐⭐⭐⭐]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Rating:* ⭐⭐⭐⭐⭐]
+  #text(size: 0.9em)[*Paper*: Systematic Mapping Study (SMS)]
 ]

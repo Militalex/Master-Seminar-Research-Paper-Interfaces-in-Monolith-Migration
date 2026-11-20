@@ -7,15 +7,19 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Paper Information:* Systematic Literature Review (SLR)]
-]
-
-#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
   #text(size: 0.9em)[*Rating:* ⭐⭐⭐⭐]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Background, Cloud Migration, Migration]
+  #text(size: 0.9em)[*Background*: Cloud Migration, Migration]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Paper*: Systematic Literature Review (SLR)]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Read*: Second Pass]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[

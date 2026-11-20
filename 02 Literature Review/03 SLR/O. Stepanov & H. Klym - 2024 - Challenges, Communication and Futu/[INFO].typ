@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Computer architecture, Microservice architectures, Reviews, Security, Servers, Software development management, Software systems, Time factors, User experience, Webassembly, architecture, interface, micro-frontend, microservices, monolithic structure, software applications]
+  #text(size: 0.9em)[*Tags:* Computer architecture, Microservice architectures, Reviews, Security, Servers, Software development management, Software systems, Time factors, User experience, Webassembly, architecture, interface, micro-frontend, microservices, monolithic structure, software applications]
 ]

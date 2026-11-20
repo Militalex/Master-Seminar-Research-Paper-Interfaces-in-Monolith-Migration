@@ -7,15 +7,19 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Paper Information:* Key Paper, Survey, Systematic Literature Review (SLR)]
-]
-
-#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
   #text(size: 0.9em)[*Rating:* ⭐⭐⭐⭐⭐]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Background, Microservices, Migration, Monolith, Monolith Decomposition]
+  #text(size: 0.9em)[*Background*: Microservices, Migration, Monolith, Monolith Decomposition]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Paper*: Key Paper, Survey, Systematic Literature Review (SLR)]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Read*: First Pass]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[

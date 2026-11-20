@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Architecture, Authentication, Authorization, Codes, Computer architecture, Fluid flow, Measurement, Process mining, Security, Signal detection, microservices, process mining, security, service boundary detection, software architecture, static analysis]
+  #text(size: 0.9em)[*Tags:* Architecture, Authentication, Authorization, Codes, Computer architecture, Fluid flow, Measurement, Process mining, Security, Signal detection, microservices, process mining, security, service boundary detection, software architecture, static analysis]
 ]

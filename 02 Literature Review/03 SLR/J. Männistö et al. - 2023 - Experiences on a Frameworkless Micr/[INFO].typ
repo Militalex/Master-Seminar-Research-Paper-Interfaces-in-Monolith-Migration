@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Companies, Computer architecture, Costs, Micro-frontend, Microservice, Microservice architectures, Software Architecture Assessment, Software architecture, Standards organizations, User interfaces]
+  #text(size: 0.9em)[*Tags:* Companies, Computer architecture, Costs, Micro-frontend, Microservice, Microservice architectures, Software Architecture Assessment, Software architecture, Standards organizations, User interfaces]
 ]

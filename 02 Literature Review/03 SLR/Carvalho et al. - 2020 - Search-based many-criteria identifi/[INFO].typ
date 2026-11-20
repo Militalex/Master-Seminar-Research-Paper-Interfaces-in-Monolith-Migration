@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* ACM [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: ACM]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*ACM*: Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* legacy systems, microservice architecture, microservice identification, search-based software engineering]
+  #text(size: 0.9em)[*Tags:* legacy systems, microservice architecture, microservice identification, search-based software engineering]
 ]

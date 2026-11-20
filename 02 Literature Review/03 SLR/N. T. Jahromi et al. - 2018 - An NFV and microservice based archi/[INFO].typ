@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Architecture, CDN, Computer architecture, Conferences, Content Delivery Network, Hardware, Internet, Microservice, NFV, Network Function Virtualization, Network function virtualization, Servers, Videos, on-the-fly component provisioning]
+  #text(size: 0.9em)[*Tags:* Architecture, CDN, Computer architecture, Conferences, Content Delivery Network, Hardware, Internet, Microservice, NFV, Network Function Virtualization, Network function virtualization, Servers, Videos, on-the-fly component provisioning]
 ]

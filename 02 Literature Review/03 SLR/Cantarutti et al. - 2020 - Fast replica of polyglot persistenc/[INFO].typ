@@ -1,13 +1,23 @@
-== Fast replica of polyglot persistence in&nbsp;microservice architectures for fog computing
+== Fast Replica of Polyglot Persistence in Microservice Architectures for Fog Computing
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Citation:* M. Cantarutti _et al._ "Fast replica of polyglot persistence in&nbsp;microservice architectures for fog computing," _Service-oriented computing: 18th international conference, ICSOC 2020, dubai, united arab emirates, december 14–17, 2020, proceedings_, 2020. [Online]. Available: #link("https://doi.org/10.1007/978-3-030-65310-1_4")]
+  #text(size: 0.9em)[*Citation:* M. Cantarutti _et al._ "Fast Replica of Polyglot Persistence in Microservice Architectures for Fog Computing," _Service-oriented computing: 18th international conference, ICSOC 2020, dubai, united arab emirates, december 14–17, 2020, proceedings_, 2020. [Online]. Available: #link("https://doi.org/10.1007/978-3-030-65310-1_4")]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* ACM [Abstract-Search]]
+  #text(size: 0.9em)[*R2-Title-Screening*]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*Exclude*: EC3]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Data movement, Efficient data management]
+  #text(size: 0.9em)[*Source*: ACM, Springer]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*ACM*: Abstract-Search]
+  ]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Tags:* Data movement, Efficient data management]
 ]

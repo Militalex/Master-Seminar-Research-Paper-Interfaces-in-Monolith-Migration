@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Application programming interfaces, Architecture, Artificial Intelligence, Artificial intelligence, Automation, CI, Cloud-Native Architecture, Clouds, Computer architecture, Containerization, Continuous Monitoring, Data Integrity, DevSecOps, Hybrid Cloud, Legacy System Modernization, Microservices, Modeling, Monitoring, Optimization, Security, CD]
+  #text(size: 0.9em)[*Tags:* Application programming interfaces, Architecture, Artificial Intelligence, Artificial intelligence, Automation, CI/CD, Cloud-Native Architecture, Clouds, Computer architecture, Containerization, Continuous Monitoring, Data Integrity, DevSecOps, Hybrid Cloud, Legacy System Modernization, Microservices, Modeling, Monitoring, Optimization, Security]
 ]

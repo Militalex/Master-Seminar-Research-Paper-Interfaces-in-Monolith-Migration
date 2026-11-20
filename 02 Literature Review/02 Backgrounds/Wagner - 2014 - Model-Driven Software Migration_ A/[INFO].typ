@@ -5,13 +5,17 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Paper Information:* Definitions]
-]
-
-#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
   #text(size: 0.9em)[*Rating:* ⭐]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Background, Usage, Migration, English Course]
+  #text(size: 0.9em)[*Background*: Migration]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Paper*: Definitions]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Usage*: English Course]
 ]

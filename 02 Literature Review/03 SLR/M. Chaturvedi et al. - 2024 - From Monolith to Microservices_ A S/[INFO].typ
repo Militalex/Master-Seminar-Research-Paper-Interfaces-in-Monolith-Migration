@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* API Gateway, AWS SNS, Apache Kafka, Challenges, Circuit Breakers, Command Query Responsibility Segregation (CQRS), Complexity theory, Correlation, Decomposition, Deployment and Scaling, Domain-Driven Design (DDD), HTTP, Industries, Kubernetes, Logic gates, Market research, Microservice architectures, Microservices, Migration, Monolithic, Monolithic Architectures, Operational Complexity, Orchestration, Patterns, Practical Motivations, Principles, RabbitMQ, Scalability, Service Mesh, Surveys, Systematic Literature Review (SLR), Systematic Mapping Study (SMS), Systematic literature review, Systematics, Testing Microservices, gRPC, SQS, REST]
+  #text(size: 0.9em)[*Tags:* API Gateway, AWS SNS/SQS, Apache Kafka, Challenges, Circuit Breakers, Command Query Responsibility Segregation (CQRS), Complexity theory, Correlation, Decomposition, Deployment and Scaling, Domain-Driven Design (DDD), HTTP/REST, Industries, Kubernetes, Logic gates, Market research, Microservice architectures, Microservices, Migration, Monolithic, Monolithic Architectures, Operational Complexity, Orchestration, Patterns, Practical Motivations, Principles, RabbitMQ, Scalability, Service Mesh, Surveys, Systematic Literature Review (SLR), Systematic Mapping Study (SMS), Systematic literature review, Systematics, Testing Microservices, gRPC]
 ]

@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Aging, Computer architecture, Couplings, Information technology, Measurement, Microservice architectures, Organizations, evaluation method, evaluation metric, fuzzy analytic hierarchy process, microservice architecture]
+  #text(size: 0.9em)[*Tags:* Aging, Computer architecture, Couplings, Information technology, Measurement, Microservice architectures, Organizations, evaluation method, evaluation metric, fuzzy analytic hierarchy process, microservice architecture]
 ]

@@ -5,13 +5,16 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* ACM [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Paper*: Research Article (RA)]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Paper Information:* Research Article (RA)]
+  #text(size: 0.9em)[*Source*: ACM]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*ACM*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* JSON, communication, microservice, monolith]
+  #text(size: 0.9em)[*Tags:* JSON, communication, microservice, monolith]
 ]

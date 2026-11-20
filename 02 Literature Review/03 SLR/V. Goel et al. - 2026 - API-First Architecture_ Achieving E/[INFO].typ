@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* API-First Architecture, Application programming interfaces, Architecture, Business, Cloud-Native Architecture, Computer architecture, Data Synchronisation, Design methodology, Digital Ecosystems, Digital Transformation, Ecosystems, Enterprise Integration, Fluid flow, Microservices, Modeling, Real-Time Data Flow, Real-time systems, Scalable Systems, System Interoperability, Timing]
+  #text(size: 0.9em)[*Tags:* API-First Architecture, Application programming interfaces, Architecture, Business, Cloud-Native Architecture, Computer architecture, Data Synchronisation, Design methodology, Digital Ecosystems, Digital Transformation, Ecosystems, Enterprise Integration, Fluid flow, Microservices, Modeling, Real-Time Data Flow, Real-time systems, Scalable Systems, System Interoperability, Timing]
 ]

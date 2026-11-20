@@ -7,15 +7,19 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Paper Information:* Systematic Literature Review (SLR)]
-]
-
-#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
   #text(size: 0.9em)[*Rating:* ⭐⭐⭐⭐]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Background, Analysis of Service Identification Approaches (SIA), Migration, SIA Taxonomy]
+  #text(size: 0.9em)[*Background*: Analysis of Service Identification Approaches (SIA), Migration, SIA Taxonomy]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Paper*: Systematic Literature Review (SLR)]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Read*: Second Pass]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[

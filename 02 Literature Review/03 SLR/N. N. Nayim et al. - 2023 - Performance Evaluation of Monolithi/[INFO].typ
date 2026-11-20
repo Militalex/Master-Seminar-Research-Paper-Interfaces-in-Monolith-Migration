@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Computer architecture, Costs, Electronic commerce, Microservice architectures, Performance evaluation, Software architecture, Software systems, e-commerce, k6, microservice, monolithic, nodeJS, reactJs, stress testing, web services mongoDB]
+  #text(size: 0.9em)[*Tags:* Computer architecture, Costs, Electronic commerce, Microservice architectures, Performance evaluation, Software architecture, Software systems, e-commerce, k6, microservice, monolithic, nodeJS, reactJs, stress testing, web services mongoDB]
 ]

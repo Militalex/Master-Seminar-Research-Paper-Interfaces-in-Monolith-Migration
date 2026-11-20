@@ -5,9 +5,16 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* ACM [Abstract-Search]]
+  #text(size: 0.9em)[*R2-Title-Screening*: Title not descriptive]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Graph Neural Networks, Machine Learning, Microservices, Monolith, Variational Autoencoder]
+  #text(size: 0.9em)[*Source*: ACM, Springer]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*ACM*: Abstract-Search]
+  ]
+]
+
+#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
+  #text(size: 0.9em)[*Tags:* Graph Neural Networks, Machine Learning, Microservices, Monolith, Variational Autoencoder]
 ]

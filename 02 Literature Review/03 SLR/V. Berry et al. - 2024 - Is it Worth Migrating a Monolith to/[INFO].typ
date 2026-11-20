@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Energy consumption, Energy efficiency, Logic gates, Memory management, Microservice architectures, Microservices, Routing, Software quality, Testing, Time factors, Web services, architecture migration, availability, energy usage, horizontal scaling, load tests, performance]
+  #text(size: 0.9em)[*Tags:* Energy consumption, Energy efficiency, Logic gates, Memory management, Microservice architectures, Microservices, Routing, Software quality, Testing, Time factors, Web services, architecture migration, availability, energy usage, horizontal scaling, load tests, performance]
 ]

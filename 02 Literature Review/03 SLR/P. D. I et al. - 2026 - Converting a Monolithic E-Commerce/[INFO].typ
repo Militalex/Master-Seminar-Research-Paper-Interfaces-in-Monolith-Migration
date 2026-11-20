@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Architecture, Artificial intelligence, Computer architecture, Conferences, E-commerce, Electronic commerce, Large Language Model, Large language models, Microservices Architecture, Modules (abstract algebra), Monolith Migration, OpenCV, Printing, Scalability, Timing, Virtual Try-On, Voice Assistant]
+  #text(size: 0.9em)[*Tags:* Architecture, Artificial intelligence, Computer architecture, Conferences, E-commerce, Electronic commerce, Large Language Model, Large language models, Microservices Architecture, Modules (abstract algebra), Monolith Migration, OpenCV, Printing, Scalability, Timing, Virtual Try-On, Voice Assistant]
 ]

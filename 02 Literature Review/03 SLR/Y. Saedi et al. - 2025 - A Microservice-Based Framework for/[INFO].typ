@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Decentralized control, Limiting, Logic, Microservice architectures, Microservices, Multi-Domain Orchestration, Network topology, Peer-to-peer computing, Reproducibility of results, Software defined networking, Software-Defined Networking, Topology]
+  #text(size: 0.9em)[*Tags:* Decentralized control, Limiting, Logic, Microservice architectures, Microservices, Multi-Domain Orchestration, Network topology, Peer-to-peer computing, Reproducibility of results, Software defined networking, Software-Defined Networking, Topology]
 ]

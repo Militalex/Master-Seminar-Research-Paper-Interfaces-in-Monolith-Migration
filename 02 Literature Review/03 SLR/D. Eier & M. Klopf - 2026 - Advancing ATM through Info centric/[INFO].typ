@@ -5,9 +5,12 @@
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Source:* IEEE [Abstract-Search] [Full-Text-Search]]
+  #text(size: 0.9em)[*Source*: IEEE]
+  #block(fill: rgb("#e0e0e0"), inset: 4pt, radius: 3pt, width: 100%)[
+    #text(size: 0.9em)[*IEEE*: Abstract-Search, Full-Text-Search]
+  ]
 ]
 
 #block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[
-  #text(size: 0.9em)[*Own Keywords:* Air Traffic Management (ATM), Architecture, Asynchronous transfer mode, Automated teller machine, Composable Service Constructs, Computer architecture, European New Service Delivery Model, FAA, Info centric NAS, Modeling, Poles and towers, Service-oriented architecture, Sports, Trajectory, Trajectory Based Operations, Zero-Trust Architecture]
+  #text(size: 0.9em)[*Tags:* Air Traffic Management (ATM), Architecture, Asynchronous transfer mode, Automated teller machine, Composable Service Constructs, Computer architecture, European New Service Delivery Model, FAA, Info centric NAS, Modeling, Poles and towers, Service-oriented architecture, Sports, Trajectory, Trajectory Based Operations, Zero-Trust Architecture]
 ]

@@ -219,13 +219,21 @@ class ParsedTags:
     paper_progress: list[str]
     source_info: list[str]
     slr_criteria: list[str]
+    extra_refinement: dict[str, list[str]]
     category_tags: list[str]
+    ethereal_tags: list[str]
+    normal_tags: list[str]
 
 
 def parse_ethereal_tags(tags, extra_text: str = "") -> ParsedTags:
-    """Liest Ratings, Fortschritte, Quellen, SLR-Kriterien und Tags aus Zotero aus."""
+    """Liest Ratings, Fortschritte, Quellen, SLR‑Kriterien und Tags aus Zotero aus.
+    Extra‑Refinement‑Hinweise (z. B. "Title not descriptive") werden
+    automatisch pro Schritt erfasst, ohne ein separates Feld zu benötigen.
+    """
     ratings, reading_progress, paper_progress = [], [], []
     source_info, slr_criteria, tiered_tags = [], [], []
+    # Temporäres Mapping step → Liste freier Anmerkungen
+    extra_refinement: dict[str, list[str]] = {}
 
     if extra_text:
         for m in re.finditer(r"\b(?:rate|rating):\s*(\d+)\b", extra_text, re.IGNORECASE):
@@ -237,11 +245,21 @@ def parse_ethereal_tags(tags, extra_text: str = "") -> ParsedTags:
             if any(char in line_str for char in ["⭐", "★"]):
                 ratings.append(escape_typst_text(line_str))
 
+    ethereal_tags: list[str] = []
+    normal_tags: list[str] = []
     for tag in tags:
         tag_str = tag.strip()
         if not tag_str:
             continue
 
+        # Determine if this is an ethereal (starts with '#') or normal tag
+        is_ethereal = tag_str.startswith('#')
+        if is_ethereal:
+            ethereal_tags.append(tag_str)
+        else:
+            normal_tags.append(tag_str)
+
+        # Versuche reguläre Tag‑Verarbeitung (inkl. IC/EC‑Tags)
         parsed = _parse_tag(
             tag_str, ratings, reading_progress, paper_progress,
             source_info, slr_criteria, tiered_tags,
@@ -249,8 +267,16 @@ def parse_ethereal_tags(tags, extra_text: str = "") -> ParsedTags:
         if parsed:
             continue
 
-        _add_tiered_tag(tag_str, tiered_tags)
+        # Extra‑Refinement‑Tag ohne IC/EC‑Suffix erkennen
+        if (m := re.match(r"^#?R(\d+)-([^/]+)/(.+)$", tag_str, re.IGNORECASE)):
+            step = f"R{m.group(1)}"
+            extra = escape_typst_text(m.group(3).strip())
+            extra_refinement.setdefault(step, []).append(extra)
+            continue
 
+        # Only add to tiered_tags if it's a normal tag (non‑ethereal)
+        if not is_ethereal:
+            _add_tiered_tag(tag_str, tiered_tags)
     tiered_tags.sort(key=lambda item: item[0])
     category_tags = [text for _, text in tiered_tags]
     formatted_source_info = _format_source_info(source_info)
@@ -261,11 +287,21 @@ def parse_ethereal_tags(tags, extra_text: str = "") -> ParsedTags:
         paper_progress=list(dict.fromkeys(paper_progress)),
         source_info=formatted_source_info,
         slr_criteria=list(dict.fromkeys(slr_criteria)),
+        extra_refinement=extra_refinement,
         category_tags=category_tags,
+        ethereal_tags=ethereal_tags,
+        normal_tags=normal_tags,
     )
 
 
 def _format_source_info(source_tags: list[list[str]]) -> list[str]:
+    """Format source tags into readable strings.
+    Supports simple source names (e.g. "Springer") and optional search type suffixes
+    like "abstract-search" or "full-text-search" which are rendered as
+    "Springer [Abstract-Search]". Complex hierarchical tags (more than two parts) are
+    joined with " > ". This function is used by ``parse_ethereal_tags`` to populate
+    the "Source" metadata block.
+    """
     sources = {}
     additional_paths = []
     search_types = {
@@ -299,45 +335,63 @@ def _format_source_info(source_tags: list[list[str]]) -> list[str]:
 
 def _parse_tag(tag_str, ratings, reading_progress, paper_progress, source_info,
                slr_criteria, tiered_tags) -> bool:
-    """Verarbeitet einen Tag als Rating, Progress, Source oder SLR-Kriterium."""
+    """Verarbeitet einen Tag als Rating, Progress, Source, SLR‑Kriterium
+    oder zusätzlichen Refinement‑Hinweis (z. B. "#R2-Title-Screening/Title not descriptive")."""
+    # Rating symbols
     if any(char in tag_str for char in ["⭐", "★"]):
         ratings.append(escape_typst_text(tag_str))
         return True
 
+    # Numeric rating like "rate: 4" or "rating/3"
     if (m := re.search(r"(?:rate|rating)[:/]\s*(\d+)", tag_str, re.IGNORECASE)):
         num_clamped = max(1, min(5, int(m.group(1))))
         ratings.append(escape_typst_text(f"{'⭐' * num_clamped} ({num_clamped}/5)"))
         return True
 
+    # Star count expressed as "3 stars" etc.
     if (m := re.match(r"^(?:#)?(\d+)\s*(?:stars?|sterne)$", tag_str, re.IGNORECASE)):
         num_clamped = max(1, min(5, int(m.group(1))))
         ratings.append(escape_typst_text(f"{'⭐' * num_clamped} ({num_clamped}/5)"))
         return True
 
+    # Reading progress
     if (m := re.match(r"^#?read/(.+)$", tag_str, re.IGNORECASE)):
         parts = [escape_typst_text(p.strip()) for p in m.group(1).split("/") if p.strip()]
         reading_progress.append(" > ".join(parts))
         return True
 
+    # Paper progress
     if (m := re.match(r"^#?paper/(.+)$", tag_str, re.IGNORECASE)):
         parts = [escape_typst_text(p.strip()) for p in m.group(1).split("/") if p.strip()]
         paper_progress.append(" > ".join(parts))
         return True
 
+    # Source tags
     if (m := re.match(r"^#?source/(.+)$", tag_str, re.IGNORECASE)):
         parts = [p.strip() for p in m.group(1).split("/") if p.strip()]
         if parts:
             source_info.append(parts)
         return True
 
+    # New pattern for standard refinement steps (IC/EC)
+    if (m := re.match(r"^#?R(\d+)-([^/]+)/(Exclude|Include)/(IC|EC)(\d+)$", tag_str, re.IGNORECASE)):
+        step, name, action, typ, num = m.groups()
+        criterion = f"R{step}-{name}/{action.capitalize()}/{typ}{num}"
+        slr_criteria.append(escape_typst_text(criterion))
+        return True
+
+    # Extra refinement tags (free‑text after the step/name slash) are handled in parse_ethereal_tags.
+    if (m := re.match(r"^#?R(\d+)-([^/]+)/(.+)$", tag_str, re.IGNORECASE)):
+        # Let the caller collect this free‑text note; we simply acknowledge the tag.
+        return True
+
+    # Legacy SLR tags for backward compatibility
     if (m := re.match(
         r"^#?slr/(?:exclusion|excluded|inclusion|included)/(.+)$",
         tag_str,
         re.IGNORECASE,
     )):
-        criterion_parts = [
-            escape_typst_text(p.strip()) for p in m.group(1).split("/") if p.strip()
-        ]
+        criterion_parts = [escape_typst_text(p.strip()) for p in m.group(1).split("/") if p.strip()]
         if criterion_parts:
             slr_criteria.append(" > ".join(criterion_parts))
         return True
@@ -359,23 +413,112 @@ def _add_tiered_tag(tag_str, tiered_tags) -> None:
 # ---------------------------------------------------------------------------
 
 def build_metadata_blocks(ieee_citation: str, tags: ParsedTags) -> str:
-    """Baut die strukturierten Typst-Metadatenblöcke auf."""
+    """Baut die strukturierten Typst-Metadatenblöcke auf, inklusive generischer Hierarchie‑Blöcke für alle Etheral‑Etcher‑Tags (Tags, die mit "#" beginnen)."""
     blocks = []
 
-    def add_block(label, content):
+    # Helper to add a simple block
+    def add_block(label: str, content: str) -> None:
         if content:
             blocks.append(
                 f'#block(fill: rgb("f8f9fa"), inset: 8pt, radius: 3pt, width: 100%)[\n'
                 f'  #text(size: 0.9em)[*{label}:* {content}]\n]'
             )
 
+    # Citation always first
     add_block("Citation", ieee_citation)
-    add_block("Source", ", ".join(tags.source_info))
-    add_block("Inclusion/Exclusion Criteria", ", ".join(tags.slr_criteria))
-    add_block("Paper Information", ", ".join(tags.paper_progress))
+
+    # Rating block should appear directly after Citation
     add_block("Rating", ", ".join(tags.ratings))
-    add_block("Own Keywords", ", ".join(tags.category_tags))
+
+    # --- Generic Etheral‑Etcher‑Tag Hierarchy ---
+        # Farben für das abwechselnde Muster (5 Graustufen, vorwärts‑rückwärts)
+    _depth_colors = [
+        'rgb("f8f9fa")',   # sehr hell
+        'rgb("#e0e0e0")',   # hell
+        'rgb("#c8c8c8")',   # mittel‑hell
+        'rgb("#b0b0b0")',   # mittel
+        'rgb("#989898")',   # dunkel
+    ]
+    def _color_for_depth(depth: int) -> str:
+            """Berechnet die Hintergrundfarbe für die gegebene Tiefe.
+            Das Farbmuster wird vorwärts durchlaufen und danach rückwärts, also:
+            0 → 1 → 2 → 3 → 4 → 3 → 2 → 1 → 0 → …
+            """
+            n = len(_depth_colors)
+            if n == 1:
+                return _depth_colors[0]
+            period = 2 * (n - 1)  # forward + backward without double‑counting ends
+            idx = depth % period
+            if idx >= n:
+                idx = period - idx
+            return _depth_colors[idx]
+    def _render_node(node: dict, label: str, depth: int) -> str:
+        """Renders a tag node (with possible children) into a Typst‑block.
+            Die Hintergrundfarbe wechselt vorwärts‑rückwärts durch das 5‑Stufen‑Palette.
+        """
+        fill_color = _color_for_depth(depth)
+        inset = 8 if depth == 0 else 4
+        parts = []
+        # Header line with label and leaf items if any
+        leaf_items = node.get('_leaf', [])
+        leaf_str = ''
+        if leaf_items:
+            leaf_str = ': ' + ', '.join(sorted(leaf_items))
+        header = f'*{label}*{leaf_str}'
+        parts.append(
+            f'#block(fill: {fill_color}, inset: {inset}pt, radius: 3pt, width: 100%)[\n'
+            f'  #text(size: 0.9em)[{header}]'
+        )
+        # Render children recursively inside this block
+        for child_label, child_node in node.items():
+            if child_label == '_leaf':
+                continue
+            child_block = _render_node(child_node, child_label, depth + 1)
+            # Indent child block for readability
+            indented = '\n'.join('  ' + line for line in child_block.split('\n'))
+            parts.append(indented)
+        parts.append(']')
+        return '\n'.join(parts)
+
+    # Build a tree from all ethereal tags (those starting with '#')
+    tree: dict = {}
+    for tag in tags.ethereal_tags:
+        # Remove leading '#'
+        clean = tag.lstrip('#').strip()
+        if not clean:
+            continue
+        parts = [p.strip() for p in clean.split('/') if p.strip()]
+        if not parts:
+            continue
+        node = tree
+        for i, part in enumerate(parts):
+            if i == len(parts) - 1:
+                # leaf – store under special key
+                leaf_set = node.setdefault('_leaf', set())
+                leaf_set.add(part)
+            else:
+                node = node.setdefault(part, {})
+
+    # Render each top‑level entry as a block
+    for top_label, top_node in tree.items():
+        blocks.append(_render_node(top_node, top_label, 0))
+
+    # --- End of generic hierarchy ---
+
+    # Normal (non‑#) tags go into a final "Tags" block
+    if tags.normal_tags:
+        add_block("Tags", ", ".join(tags.normal_tags))
+
+    # Preserve additional classic blocks that are still relevant
     add_block("Reading Progress", ", ".join(tags.reading_progress))
+
+    # Extra refinement notes (free‑text) – already included in the hierarchy, but keep for legacy support
+    if getattr(tags, "extra_refinement", None):
+        notes = []
+        for step, msgs in tags.extra_refinement.items():
+            notes.extend(msgs)
+        if notes:
+            add_block("Refinement Notes", ", ".join(notes))
 
     return "\n\n".join(blocks)
 
